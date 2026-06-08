@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emmanuel Olertey Nyamekye Wussah — IT Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --accent: #E24B4A;
+    --accent2: #378ADD;
+    --accent3: #1D9E75;
+    --bg: #f5f5f3;
+    --bg-card: #ffffff;
+    --bg-secondary: #f0efea;
+    --text-primary: #1a1a18;
+    --text-secondary: #5f5e5a;
+    --text-tertiary: #888780;
+    --border: rgba(0,0,0,0.1);
+    --border-md: rgba(0,0,0,0.18);
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+    --font-code: 'JetBrains Mono', monospace;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1a18;
+      --bg-card: #232320;
+      --bg-secondary: #2c2c2a;
+      --text-primary: #f0efe8;
+      --text-secondary: #b4b2a9;
+      --text-tertiary: #888780;
+      --border: rgba(255,255,255,0.1);
+      --border-md: rgba(255,255,255,0.2);
+    }
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-body); color: var(--text-primary); background: var(--bg); }
+
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 2.5rem;
+    border-bottom: 0.5px solid var(--border);
+    background: var(--bg-card);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; color: var(--accent); }
+  .nav-links { display: flex; gap: 1.75rem; }
+  .nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--accent); }
+
+  .hero { padding: 5rem 2.5rem 4rem; background: var(--bg-card); border-bottom: 3px solid var(--accent); position: relative; overflow: hidden; }
+  .hero-tag { font-family: var(--font-code); font-size: 12px; color: var(--accent2); margin-bottom: 0.5rem; }
+  .hero-name { font-family: var(--font-display); font-size: clamp(52px, 9vw, 96px); line-height: 0.92; letter-spacing: 2px; color: var(--text-primary); }
+  .hero-name span { color: var(--accent); }
+  .hero-role { font-family: var(--font-code); font-size: 13px; margin-top: 1.1rem; color: var(--text-secondary); border-left: 3px solid var(--accent2); padding-left: 12px; line-height: 1.6; }
+  .hero-desc { max-width: 600px; font-size: 15px; line-height: 1.8; color: var(--text-secondary); margin-top: 1.5rem; }
+  .hero-contacts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1.75rem; }
+  .hero-contact-pill { font-family: var(--font-code); font-size: 11px; padding: 6px 14px; border-radius: 2px; border: 0.5px solid var(--border-md); color: var(--text-secondary); background: var(--bg-secondary); display: inline-flex; align-items: center; gap: 7px; text-decoration: none; transition: all 0.2s; }
+  .hero-contact-pill:hover { border-color: var(--accent2); color: var(--accent2); }
+  .hero-decor { position: absolute; right: 2.5rem; top: 50%; transform: translateY(-50%); font-family: var(--font-display); font-size: 180px; opacity: 0.035; line-height: 1; color: var(--text-primary); pointer-events: none; user-select: none; }
+
+  .container { padding: 3rem 2.5rem; }
+  .section-label { font-family: var(--font-code); font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .section-title { font-family: var(--font-display); font-size: 38px; letter-spacing: 1.5px; color: var(--text-primary); margin-bottom: 2rem; }
+  .divider { height: 1px; background: var(--border); margin: 0 2.5rem; }
+
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 9px; }
+  .skill-chip { font-family: var(--font-code); font-size: 11px; padding: 6px 13px; border-radius: 2px; border: 0.5px solid var(--border-md); color: var(--text-secondary); background: var(--bg-card); transition: all 0.15s; }
+  .skill-chip.hot { border-color: var(--accent); color: var(--accent); }
+  .skill-chip.green { border-color: var(--accent3); color: var(--accent3); }
+
+  .project-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; border-top: 3px solid var(--accent2); margin-bottom: 16px; }
+  .project-screenshot { width: 100%; height: 260px; object-fit: cover; object-position: top; display: block; border-bottom: 0.5px solid var(--border); }
+  .project-body { padding: 1.75rem; }
+  .project-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .project-num { font-family: var(--font-display); font-size: 44px; color: var(--border-md); line-height: 1; }
+  .project-badge { font-family: var(--font-code); font-size: 10px; padding: 3px 10px; border-radius: 2px; background: #e6f1fb; color: #185fa5; }
+  @media (prefers-color-scheme: dark) { .project-badge { background: #0c447c; color: #85b7eb; } }
+  .project-title { font-size: 17px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+  .project-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; }
+  .project-features { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .project-feature { font-size: 13px; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 9px; line-height: 1.5; }
+  .project-feature i { color: var(--accent2); margin-top: 2px; flex-shrink: 0; }
+  .project-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+  .tag { font-family: var(--font-code); font-size: 10px; padding: 3px 9px; border-radius: 2px; background: var(--bg-secondary); color: var(--text-tertiary); }
+
+  .timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+  .timeline-item { display: flex; gap: 1.5rem; padding: 1.5rem; background: var(--bg-card); border-left: 3px solid var(--border); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; transition: border-color 0.2s; }
+  .timeline-item:hover { border-left-color: var(--accent2); }
+  .timeline-date { font-family: var(--font-code); font-size: 11px; color: var(--text-tertiary); min-width: 70px; padding-top: 2px; line-height: 1.6; }
+  .timeline-role { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+  .timeline-company { font-size: 13px; color: var(--accent2); margin-bottom: 8px; }
+  .timeline-bullets { padding-left: 1.1rem; }
+  .timeline-bullets li { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 4px; }
+
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .cert-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.4rem; border-top: 3px solid var(--accent3); }
+  .cert-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 5px; line-height: 1.4; }
+  .cert-issuer { font-family: var(--font-code); font-size: 11px; color: var(--accent3); }
+
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+  .edu-card { background: var(--bg-card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
+  .edu-school { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+  .edu-degree { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+  .edu-year { font-family: var(--font-code); font-size: 11px; color: var(--accent); margin-top: 7px; }
+
+  .contact-section { background: var(--text-primary); border-radius: var(--radius); padding: 3rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; margin: 0 2.5rem 3rem; }
+  .contact-headline { font-family: var(--font-display); font-size: 42px; letter-spacing: 1.5px; color: var(--bg); }
+  .contact-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 5px; }
+  .contact-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .contact-link { font-family: var(--font-code); font-size: 11px; padding: 9px 16px; border: 1px solid rgba(255,255,255,0.2); border-radius: 2px; color: rgba(255,255,255,0.8); transition: background 0.15s; display: inline-flex; align-items: center; gap: 7px; text-decoration: none; }
+  .contact-link:hover { background: rgba(255,255,255,0.1); }
+
+  footer { padding: 1.75rem 2.5rem; font-family: var(--font-code); font-size: 11px; color: var(--text-tertiary); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .status-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent3); margin-right: 7px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.25rem; }
+    .nav-links { gap: 1rem; }
+    .hero { padding: 3rem 1.25rem 2.5rem; }
+    .hero-decor { display: none; }
+    .container { padding: 2rem 1.25rem; }
+    .divider { margin: 0 1.25rem; }
+    .contact-section { margin: 0 1.25rem 2rem; padding: 2rem; }
+    footer { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">EONW</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#certs">Certs</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">// Hello — I'm</div>
+  <div class="hero-name">Emmanuel<br><span>Nyamekye</span></div>
+  <div class="hero-role">Information Technology Intern · BSc IT Student · Central University, Ghana</div>
+  <p class="hero-desc">Analytical and detail-oriented ICT professional with a strong foundation in IT support, network analysis, digital forensics, and Microsoft Office. Passionate about leveraging technology to improve organisational efficiency and security.</p>
+  <div class="hero-contacts">
+    <a class="hero-contact-pill" href="mailto:enyamekye138@outlook.com"><i class="ti ti-mail"></i> enyamekye138@outlook.com</a>
+    <a class="hero-contact-pill" href="tel:+233508806869"><i class="ti ti-phone"></i> +233 50 880 6869</a>
+    <a class="hero-contact-pill" href="https://github.com/Nyamekye2002" target="_blank"><i class="ti ti-brand-github"></i> Nyamekye2002</a>
+    <a class="hero-contact-pill"><i class="ti ti-map-pin"></i> Big Ada, Accra, Ghana</a>
+  </div>
+  <div class="hero-decor">ICT</div>
+</div>
+
+<div class="container" id="skills">
+  <div class="section-label">// 01 — Technical Arsenal</div>
+  <div class="section-title">EXPERTISE</div>
+  <div class="skills-grid">
+    <div class="skill-chip hot">Digital Forensic Investigation</div>
+    <div class="skill-chip hot">Packet Inspection (Wireshark)</div>
+    <div class="skill-chip hot">Network Traffic Analysis</div>
+    <div class="skill-chip hot">Evidence Preservation &amp; Chain of Custody</div>
+    <div class="skill-chip">Network Protocol Architecture (TCP/IP, DNS, SSH, FTP, HTTP)</div>
+    <div class="skill-chip">OS Deployment &amp; Configuration (Windows/Linux)</div>
+    <div class="skill-chip">Technical Support &amp; Hardware Troubleshooting</div>
+    <div class="skill-chip">Data Volatility Analysis (Order of Volatility)</div>
+    <div class="skill-chip green">Advanced Excel &amp; Data Management</div>
+    <div class="skill-chip green">Technical Documentation (Word &amp; PowerPoint)</div>
+    <div class="skill-chip">IT Help Desk Support &amp; User Communication</div>
+    <div class="skill-chip">Analytical Problem-Solving</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" id="projects">
+  <div class="section-label">// 02 — What I've Built</div>
+  <div class="section-title">PROJECTS</div>
+  <div class="project-card">
+   <img class="project-screenshot" src="project1.png" alt="BlueRoute Logistics Expense System dashboard" />
+    <div class="project-body">
+      <div class="project-header">
+        <div class="project-num">01</div>
+        <span class="project-badge">Featured Project</span>
+      </div>
+      <div class="project-title">BlueRoute Logistics Expense System</div>
+      <p class="project-desc">A full-featured logistics finance dashboard built to search, filter, analyse, export, and manage company expenses from one professional interface. Includes role-based access, budget alerts, and executive reporting.</p>
+      <div class="project-features">
+        <div class="project-feature"><i class="ti ti-chart-bar"></i><span>Finance Command Centre with real-time expense tracking — total spend, receipt count, top categories and vehicles</span></div>
+        <div class="project-feature"><i class="ti ti-bell"></i><span>Budget Alerts &amp; Executive Summary — over-limit warnings and best/worst spending indicators per category</span></div>
+        <div class="project-feature"><i class="ti ti-table"></i><span>Recent Activity feed with receipt numbers, staff names, amounts, and dates</span></div>
+        <div class="project-feature"><i class="ti ti-users"></i><span>User Management module with admin role controls and dark mode toggle</span></div>
+        <div class="project-feature"><i class="ti ti-file-analytics"></i><span>Reports &amp; Analytics tab for generating and exporting financial reports</span></div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Dashboard</span>
+        <span class="tag">Finance System</span>
+        <span class="tag">Logistics</span>
+        <span class="tag">User Management</span>
+        <span class="tag">Data Analytics</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" id="experience">
+  <div class="section-label">// 03 — Where I've Been</div>
+  <div class="section-title">EXPERIENCE</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">2019 –<br>2020</div>
+      <div>
+        <div class="timeline-role">IT Intern</div>
+        <div class="timeline-company">Carlos Printing Press</div>
+        <ul class="timeline-bullets">
+          <li>Maintained and calibrated high-volume digital printing equipment, performing routine hardware troubleshooting to minimise downtime.</li>
+          <li>Diagnosed and resolved equipment errors, paper jams, and connectivity issues between workstations and production hardware.</li>
+          <li>Managed network print queues and monitored data transmission from design systems to local printing servers.</li>
+          <li>Reviewed and configured pre-press digital assets — verifying file formats, resolutions, and colour profiles before production.</li>
+          <li>Organised a digital filing system for corporate clients, ensuring data integrity and quick retrieval of legacy project files.</li>
+          <li>Translated client requirements into technical production specs, delivering custom outputs under tight deadlines.</li>
+          <li>Managed inventory levels for production supplies, generating resource reports to prevent project delays.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" id="certs">
+  <div class="section-label">// 04 — Credentials</div>
+  <div class="section-title">CERTIFICATIONS</div>
+  <div class="certs-grid">
+    <div class="cert-card">
+      <div class="cert-title">Introduction to Digital Forensics</div>
+      <div class="cert-issuer">Security Blue Team</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-title">Introduction to Network Analysis</div>
+      <div class="cert-issuer">Security Blue Team</div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-title">Microsoft Office Professional</div>
+      <div class="cert-issuer">Sumatech</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="container" id="education">
+  <div class="section-label">// 05 — Academic Path</div>
+  <div class="section-title">EDUCATION</div>
+  <div class="edu-grid">
+    <div class="edu-card" style="border-top:3px solid var(--accent2);">
+      <div class="edu-school">Central University</div>
+      <div class="edu-degree">BSc Information Technology</div>
+      <div class="edu-year">2024 – Present</div>
+    </div>
+    <div class="edu-card" style="border-top:3px solid var(--border-md);">
+      <div class="edu-school">Preset Pacesetters Institute</div>
+      <div class="edu-degree">WASSCE</div>
+      <div class="edu-year">Graduated 2022</div>
+    </div>
+    <div class="edu-card" style="border-top:3px solid var(--border-md);">
+      <div class="edu-school">Natriku D/A JHS</div>
+      <div class="edu-degree">BECE</div>
+      <div class="edu-year">2019</div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contact">
+  <div>
+    <div class="contact-headline">LET'S CONNECT</div>
+    <div class="contact-sub">Open to internships, IT roles &amp; collaborations · Accra, Ghana</div>
+  </div>
+  <div class="contact-links">
+    <a class="contact-link" href="mailto:enyamekye138@outlook.com"><i class="ti ti-mail"></i> enyamekye138@outlook.com</a>
+    <a class="contact-link" href="tel:+233508806869"><i class="ti ti-phone"></i> +233 50 880 6869</a>
+    <a class="contact-link" href="https://github.com/Nyamekye2002" target="_blank"><i class="ti ti-brand-github"></i> GitHub</a>
+  </div>
+</div>
+
+<footer>
+  <span><span class="status-dot"></span>Available for opportunities</span>
+  <span>Emmanuel Olertey Nyamekye Wussah · 2025</span>
+</footer>
+
+</body>
+</html>
