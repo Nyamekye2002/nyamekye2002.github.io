@@ -1,28 +1,679 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Privacy Policy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Compliant & Professional</title>
+    <style>
+        /* Modern Design System & Variables */
+        :root {
+            --primary: #1e3a8a; /* Deep Trust Blue */
+            --primary-light: #eff6ff;
+            --accent: #2563eb; /* High Contrast Indigo */
+            --accent-hover: #1d4ed8;
+            --text-dark: #1f2937; /* Neutral 800 */
+            --text-medium: #4b5563; /* Neutral 600 */
+            --text-light: #9ca3af; /* Neutral 400 */
+            --bg-page: #f8fafc; /* Slate 50 */
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0; /* Slate 200 */
+            --success: #10b981; /* Emerald 500 */
+            --success-light: #ecfdf5; /* Emerald 50 */
+            --success-border: #a7f3d0; /* Emerald 200 */
+            --alert: #ef4444; /* Red 500 */
+            --alert-light: #fef2f2; /* Red 50 */
+            --alert-border: #fca5a5; /* Red 300 */
+            --radius-lg: 16px;
+            --radius-md: 8px;
+            --radius-sm: 4px;
+            --transition-speed: 0.2s;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-page);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+        }
+
+        a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Container Layout */
+        .wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Style */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .shield-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+
+        .meta-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: var(--text-medium);
+        }
+
+        .badge {
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .bullet-separator {
+            color: var(--text-light);
+        }
+
+        /* 2-Column Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            position: sticky;
+            top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Table of contents links */
+        .toc-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .toc-link {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            display: block;
+            padding: 6px 0;
+            border-left: 2px solid transparent;
+            padding-left: 12px;
+            font-weight: 400;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .toc-link:hover {
+            color: var(--primary);
+            border-left-color: var(--accent);
+            padding-left: 16px;
+            text-decoration: none;
+            background-color: var(--primary-light);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        /* Quick highlights box */
+        .highlight-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            color: var(--text-medium);
+        }
+
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-icon {
+            color: var(--success);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Main Policy Text Panel */
+        .main-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .policy-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 40px;
+        }
+
+        .policy-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .policy-section h2::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-left: 10px;
+        }
+
+        .policy-section p {
+            margin-bottom: 18px;
+            color: var(--text-medium);
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .policy-section p strong {
+            color: var(--text-dark);
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 18px;
+        }
+
+        .policy-section ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .policy-section ul li::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Key Highlights boxes for Compliance */
+        .disclosure-box {
+            background-color: var(--success-light);
+            border: 1px solid var(--success-border);
+            border-left: 4px solid var(--success);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin: 24px 0;
+        }
+
+        .disclosure-box h4 {
+            color: #065f46;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .disclosure-box p {
+            color: #047857;
+            font-size: 0.925rem;
+            margin-bottom: 0;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .opt-out-box {
+            background-color: var(--alert-light);
+            border: 1px solid var(--alert-border);
+            border-left: 4px solid var(--alert);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            margin: 24px 0;
+        }
+
+        .opt-out-box h4 {
+            color: #991b1b;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .opt-out-box p {
+            color: #b91c1c;
+            font-size: 0.925rem;
+            margin-bottom: 12px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-card);
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            gap: 6px;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            background-color: var(--primary-light);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            color: white;
+            border-color: var(--accent-hover);
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.875rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .toc-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .wrapper {
+                padding: 20px 12px;
+            }
+
+            header {
+                padding: 20px 12px;
+                border-radius: var(--radius-md);
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-content {
+                padding: 24px 16px;
+                border-radius: var(--radius-md);
+            }
+
+            .meta-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-left, .footer-right {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<h1>Privacy Policy</h1>
+    <div class="wrapper">
+        <!-- Professional Header Block -->
+        <header>
+            <div class="shield-icon">
+                <!-- SVG Shield Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M5.072.549a1.1 1.1 0 0 0-1.071.135L1.11 2.628A1 1 0 0 0 .5 3.46v4.61a7 7 0 0 0 3.393 6.004l3.7 2.155a1 1 0 0 0 .993 0l3.7-2.155a7 7 0 0 0 3.393-6.004V3.46a1 1 0 0 0-.61-.832L12 1.684a1.1 1.1 0 0 0-1.072-.135L8 2.822 5.072.549zM8 1.404l3.18 2.417-3.18 1.85-3.18-1.85L8 1.404zm3.953 3.653l2.547-1.48v4.034a6 6 0 0 1-2.91 5.143L8.4 14.73a.2.2 0 0 1-.2 0L5.01 12.754a6 6 0 0 1-2.91-5.143V3.577l2.547 1.48L8 7.022l3.953-1.965z"/>
+                </svg>
+            </div>
+            <h1>Privacy Policy</h1>
+            <div class="meta-info">
+                <span class="badge">Official Compliance Document</span>
+                <span class="bullet-separator">•</span>
+                <span>Last Updated: <strong>June 10, 2026</strong></span>
+                <span class="bullet-separator">•</span>
+                <span>Version 2.1</span>
+            </div>
+        </header>
 
-<p>This website uses Google AdSense to display advertisements.</p>
+        <!-- Main Body Grid Layout -->
+        <div class="grid-container">
+            
+            <!-- Sidebar with Navigation & Summary Cards -->
+            <aside class="sidebar">
+                
+                <!-- Table of Contents -->
+                <nav class="card">
+                    <div class="card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg>
+                        Sections
+                    </div>
+                    <ul class="toc-list">
+                        <li><a href="#introduction" class="toc-link">1. Introduction</a></li>
+                        <li><a href="#information-collection" class="toc-link">2. Information Collection</a></li>
+                        <li><a href="#log-files" class="toc-link">3. Log Files & Analytics</a></li>
+                        <li><a href="#cookies-ads" class="toc-link">4. Cookies & Ad Networks</a></li>
+                        <li><a href="#google-adsense" class="toc-link">5. Google AdSense & Opt-Out</a></li>
+                        <li><a href="#gdpr-ccpa" class="toc-link">6. GDPR & CCPA Rights</a></li>
+                        <li><a href="#childrens-privacy" class="toc-link">7. Children's Information</a></li>
+                        <li><a href="#contact" class="toc-link">8. Contact Information</a></li>
+                    </ul>
+                </nav>
 
-<p>Google and other third-party vendors may use cookies to serve ads based on your prior visits to this website or other websites.</p>
+                <!-- Quick Highlights summary card -->
+                <div class="card">
+                    <div class="card-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                        At A Glance
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">✓</div>
+                        <div><strong>AdSense Compliant:</strong> Fully discloses cookies, DART tags, and third-party ad serving networks.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">✓</div>
+                        <div><strong>Data Privacy:</strong> We do not gather or sell your personal names, emails, or credentials unless voluntarily provided.</div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">✓</div>
+                        <div><strong>Control:</strong> Outlines comprehensive instructions and links on how you can opt out of personalized ads instantly.</div>
+                    </div>
+                </div>
 
-<p>These cookies allow Google and its partners to show relevant ads to users.</p>
+            </aside>
 
-<p>You may opt out of personalized advertising by visiting Google Ads Settings.</p>
+            <!-- Main Content panel -->
+            <main class="main-content">
+                
+                <!-- Section 1: Introduction -->
+                <section id="introduction" class="policy-section">
+                    <h2>1. Introduction</h2>
+                    <p>At our website, accessible via GitHub Pages, the privacy of our visitors is one of our main priorities. This Privacy Policy document contains types of information that are collected and recorded by this website and how we use it.</p>
+                    <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect here.</p>
+                </section>
 
-<p>We do not collect personal information such as names, emails, or passwords unless you choose to contact us directly.</p>
+                <!-- Section 2: Information We Collect -->
+                <section id="information-collection" class="policy-section">
+                    <h2>2. Information We Collect</h2>
+                    <p>We believe in absolute transparency and minimal data footprint:</p>
+                    <ul>
+                        <li><strong>Personal Identification Information:</strong> We do not collect personal information such as names, physical addresses, emails, or passwords unless you explicitly and voluntarily choose to contact us directly (for instance, via email). If you contact us directly, we may receive additional information about you such as your name, email address, the contents of the message, and any attachments you may send.</li>
+                        <li><strong>Hosting & Server Logs:</strong> Since our website is hosted on GitHub Pages, basic operational data (such as server logs and transit statistics) may be handled by GitHub's infrastructure. Please refer to GitHub's Privacy Statement for detailed information.</li>
+                    </ul>
+                </section>
 
-<p>This website is hosted on GitHub Pages and may use basic analytics tools to understand traffic.</p>
+                <!-- Section 3: Log Files -->
+                <section id="log-files" class="policy-section">
+                    <h2>3. Log Files & Analytics</h2>
+                    <p>Our website follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this as part of hosting services' analytics.</p>
+                    <p>The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of this information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.</p>
+                </section>
 
-<h2>Contact</h2>
-<p>If you have any questions, contact: enyamekye138@gmail.com.com</p>
+                <!-- Section 4: Cookies & Ad Networks -->
+                <section id="cookies-ads" class="policy-section">
+                    <h2>4. Cookies & Ad Networks</h2>
+                    <p>Like any other website, our website uses "cookies". These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+                    <p>You can choose to disable cookies through your individual browser options. More detailed information about cookie management with specific web browsers can be found at the browsers' respective websites.</p>
+                </section>
 
-<p>Last updated: 2026</p>
+                <!-- Section 5: Google AdSense -->
+                <section id="google-adsense" class="policy-section">
+                    <h2>5. Google AdSense & Opt-Out</h2>
+                    <p>Google is one of the third-party vendors on our site. It uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
+                    
+                    <!-- High Impact AdSense Compliant Callout Box -->
+                    <div class="disclosure-box">
+                        <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                            </svg>
+                            AdSense Disclosures
+                        </h4>
+                        <p>
+                            • Google and other third-party vendors may use cookies to serve advertisements based on your prior visits to this website or other websites.<br>
+                            • Google's use of advertising cookies enables it and its partners to serve highly relevant, personalized ads to users based on their visits to our website and/or other sites on the Internet.<br>
+                            • Other third-party ad networks or vendors may also use cookies, JavaScript, or Web Beacons to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content you see.
+                        </p>
+                    </div>
 
-</body>
+                    <p>Our privacy policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options.</p>
+
+                    <!-- Opt-Out Actions and Button Controls -->
+                    <div class="opt-out-box">
+                        <h4>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 1 2-2h4a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-6zM0 11.5a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 7 11.5v2A1.5 1.5 0 0 1 5.5 15h-4A1.5 1.5 0 0 1 0 13.5v-2zm16-7A1.5 1.5 0 0 1 14.5 6h-4A1.5 1.5 0 0 1 9 4.5v-2A1.5 1.5 0 0 1 10.5 1h4A1.5 1.5 0 0 1 16 2.5v2z"/>
+                            </svg>
+                            Take Control: How to Opt Out of Personalized Ads
+                        </h4>
+                        <p>You can seamlessly opt out of interest-based or personalized advertising by Google and other third-party networks using the official tools provided below:</p>
+                        <div class="btn-container">
+                            <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zM1 8a7 7 0 1 1 14 0A7 7 0 0 1 1 8z"/>
+                                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                                </svg>
+                                Google Ads Settings
+                            </a>
+                            <a href="http://www.aboutads.info/choices" target="_blank" rel="noopener noreferrer" class="btn">
+                                AboutAds Opt-Out Page
+                            </a>
+                            <a href="http://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer" class="btn">
+                                NAI Consumer Opt-Out
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 6: GDPR & CCPA Rights -->
+                <section id="gdpr-ccpa" class="policy-section">
+                    <h2>6. GDPR & CCPA Privacy Rights</h2>
+                    <p>We want to ensure you are fully aware of all of your data protection rights. Depending on your jurisdiction (such as the EU under GDPR, or California under CCPA), you may be entitled to the following rights:</p>
+                    <ul>
+                        <li><strong>The Right to Access:</strong> You have the right to request copies of your personal data.</li>
+                        <li><strong>The Right to Rectification:</strong> You have the right to request that we correct any information you believe is inaccurate or incomplete.</li>
+                        <li><strong>The Right to Erasure:</strong> You have the right to request that we erase your personal data, under certain conditions.</li>
+                        <li><strong>The Right to Restrict/Object to Processing:</strong> You have the right to request that we restrict or object to our processing of your personal data, under certain conditions.</li>
+                        <li><strong>The Right to Data Portability:</strong> You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.</li>
+                    </ul>
+                    <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us immediately.</p>
+                </section>
+
+                <!-- Section 7: Children's Information -->
+                <section id="childrens-privacy" class="policy-section">
+                    <h2>7. Children's Information</h2>
+                    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+                    <p>We do not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+                </section>
+
+                <!-- Section 8: Contact Information -->
+                <section id="contact" class="policy-section">
+                    <h2>8. Contact Information</h2>
+                    <p>We believe in open and accessible lines of communication. If you have any questions, require additional clarification regarding our privacy practices, or wish to exercise your data rights, please reach out to us:</p>
+                    
+                    <div style="background-color: var(--primary-light); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 16px; margin-top: 16px;">
+                        <div style="color: var(--accent); background-color: white; border-radius: 50%; padding: 10px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm5.9-1.277L16 11.801V4.697l-3.338 2.856z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; color: var(--primary); font-size: 1.1rem;">Official Inquiry Email</div>
+                            <div style="margin-top: 4px;">
+                                <a href="/cdn-cgi/l/email-protection#ff9a91869e929a94869aceccc7bf98929e9693d19c9092" style="font-size: 1.05rem; font-weight: 700; text-decoration: underline;"><span class="__cf_email__" data-cfemail="2c4942554d41494755491d1f146c4b414d4540024f4341">[email&#160;protected]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- Footer containing copyrights & extra assurance statements -->
+        <footer>
+            <div class="footer-left">
+                © 2026 Privacy Policy Document. All Rights Reserved.
+            </div>
+            <div class="footer-right">
+                Designed for Google AdSense & Regulatory Compliance.
+            </div>
+        </footer>
+    </div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a09bfa0d4ea4ef0d',t:'MTc4MTEzMjI2NA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
